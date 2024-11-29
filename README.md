@@ -1,21 +1,34 @@
-# Projeto de TraduÁ„o com Cache e MediÁ„o de Tempo
+# Projeto de Tradu√ß√£o com Cache e Medi√ß√£o de Tempo
 
-## DescriÁ„o
+## Descri√ß√£o
 
-Este projeto implementa um sistema de traduÁ„o baseado em arquivos XML, utilizando **cache de traduÁıes** para otimizar o desempenho e **medir o tempo de execuÁ„o** de cada operaÁ„o de traduÁ„o com a classe `Stopwatch`. O objetivo È evitar a leitura repetida dos arquivos XML e fornecer uma forma de monitorar o tempo de execuÁ„o das traduÁıes.
+Este projeto implementa um sistema de tradu√ß√£o baseado em arquivos XML, utilizando **cache de tradu√ß√µes** para otimizar o desempenho e **medir o tempo de execu√ß√£o** de cada opera√ß√£o de tradu√ß√£o com a classe `Stopwatch`. O objetivo √© evitar a leitura repetida dos arquivos XML e fornecer uma forma de monitorar o tempo de execu√ß√£o das tradu√ß√µes.
 
 ---
 
 ## Funcionalidades
 
-- **Cache de TraduÁıes**: Utiliza o `ConcurrentDictionary` para armazenar as traduÁıes carregadas em memÛria, evitando a necessidade de ler os arquivos XML repetidamente.
-- **MediÁ„o de Tempo**: A funÁ„o `MeasureExecutionTime` utiliza a classe `Stopwatch` para medir o tempo de execuÁ„o de cada traduÁ„o, mostrando os resultados no console.
-- **Leitura de Arquivo XML**: Carrega os arquivos XML de traduÁ„o a partir de um diretÛrio especÌfico e realiza a busca pela chave desejada.
+- **Cache de Tradu√ß√µes**: Utiliza o `ConcurrentDictionary` para armazenar as tradu√ß√µes carregadas em mem√≥ria, evitando a necessidade de ler os arquivos XML repetidamente.
+- **Medi√ß√£o de Tempo**: A fun√ß√£o `MeasureExecutionTime` utiliza a classe `Stopwatch` para medir o tempo de execu√ß√£o de cada tradu√ß√£o, mostrando os resultados no console.
+- **Leitura de Arquivo XML**: Carrega os arquivos XML de tradu√ß√£o a partir de um diret√≥rio espec√≠fico e realiza a busca pela chave desejada.
 
 ---
 
-## Estrutura do CÛdigo
+## Estrutura do C√≥digo
 
 ### 1. **Classe `Program`**
 
-A classe `Program` È respons·vel por medir o tempo de execuÁ„o de cada chamada ao mÈtodo `ServiceTranslation.T`.
+A classe `Program` √© respons√°vel por medir o tempo de execu√ß√£o de cada chamada ao m√©todo `ServiceTranslation.T`.
+
+### 2. **Como usar**
+
+1. Defina os arquivos de tradu√ß√£o XML: Os arquivos XML de tradu√ß√£o devem ser colocados no diret√≥rio LocalizationTranslation no diret√≥rio atual do projeto.
+
+2. Chame o m√©todo ServiceTranslation.T: Para obter uma tradu√ß√£o, chame o m√©todo ServiceTranslation.T, passando o idioma e a chave do texto que deseja traduzir.
+
+```csharp
+var translation = ServiceTranslation.T(TranslationEnum.pt_BR, "Text");
+Console.WriteLine(translation); // Exibe a tradu√ß√£o do "Text"
+```
+
+3. Medir o tempo de execu√ß√£o: Para medir o tempo de execu√ß√£o de cada tradu√ß√£o, utilize o m√©todo MeasureExecutionTime, que ir√° medir e exibir o tempo no console.
